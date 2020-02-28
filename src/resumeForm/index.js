@@ -17,10 +17,10 @@ const FormDiv = styled.div`
   height: 100vh;
 `;
 
-const getForm = page => {
+const getForm = (page, props) => {
   switch (page) {
     case "personal":
-      return <PersonalForm />;
+      return <PersonalForm {...props} />;
     case "education":
       return <EducationForm />;
     case "work":
@@ -93,7 +93,7 @@ const ResumeForm = props => {
                 overflowY: "auto"
               }}
             >
-              {getForm(params.page)}
+              {getForm(params.page, props)}
             </div>
           </Content>
         </Layout>
